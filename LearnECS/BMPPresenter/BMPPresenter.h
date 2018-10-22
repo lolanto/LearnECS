@@ -1,13 +1,10 @@
 #pragma once
 #include "../Presenter.h"
-#include <fstream>
 
+struct FIBITMAP;
 class BMPPresenter : public Presenter {
-	struct Pixel {
-		unsigned char r;
-		unsigned char g;
-		unsigned char b;
-	};
+public:
+	static BMPPresenter& GetInstance();
 public:
 	~BMPPresenter();
 	bool Setup(int width, int height);
@@ -16,8 +13,7 @@ public:
 private:
 	BMPPresenter();
 private:
+	FIBITMAP * m_map;
 	int m_width, m_height;
 	bool m_hasSetup;
-	std::ofstream m_file;
-	Pixel* m_buffer;
 };

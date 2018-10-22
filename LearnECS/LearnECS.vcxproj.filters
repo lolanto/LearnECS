@@ -13,12 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Imp">
+      <UniqueIdentifier>{16f032a0-7447-46d6-9143-a7fbb8e532b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="BMPPresenter\BMPPresenter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,8 +35,11 @@
     <ClInclude Include="Presenter.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BMPPresenter.h">
+    <ClInclude Include="Ray.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BMPPresenter\BMPPresenter.h">
+      <Filter>Imp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
