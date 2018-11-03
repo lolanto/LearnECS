@@ -1,10 +1,8 @@
 #include <iostream>
-#include "BMPPresenter/BMPPresenter.h"
-
-Presenter& pre = BMPPresenter::GetInstance();
+#include "Math/Vector.h"
 
 void main() {
-	pre.Setup(100, 100);
-	pre.Present();
+	Vector3 v;
+	Vector3 b = v;
 	system("pause");
 }

@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)3rdPart\FreeImage\$(PlatformTarget);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)3rdPart\mathfu;$(SolutionDir)3rdPart\FreeImage\$(PlatformTarget);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)3rdPart\FreeImage\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -122,12 +122,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Math\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BMPPresenter\BMPPresenter.h" />
     <ClInclude Include="Body.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Material.h" />
+    <ClInclude Include="Math\Vector.h" />
     <ClInclude Include="Presenter.h" />
     <ClInclude Include="Ray.h" />
   </ItemGroup>
