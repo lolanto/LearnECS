@@ -2,7 +2,7 @@
 #include "CID.h"
 class Component {
 public:
-	Component(COMID id) : CID(id) {}
+	Component(CID::ID id) : CID(id) {}
 	virtual ~Component() = default;
-	const COMID CID;
+	const CID::ID CID;
 };

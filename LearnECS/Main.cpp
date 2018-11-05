@@ -1,10 +1,11 @@
 #include <iostream>
-#include "Math/Vector3.h"
-#include "Math/Matrix4x4.h"
+#include "Components/Position.h"
+#include "Components/Collidor.h"
+#include "Entity.h"
 using namespace std;
 void main() {
-	Vector3 v(2, 3, 4);
-	v = Vector3::Normalize(v);
-	cout << v[0];
+	SphereCollidor cs(2.0f);
+	Position p;
+	Entity e(CID::C_SPHERE_COL, &cs, CID::C_POSITION, &p);
 	system("pause");
 }

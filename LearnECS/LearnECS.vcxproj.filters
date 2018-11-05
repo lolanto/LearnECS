@@ -39,6 +39,9 @@
     <ClCompile Include="Math\Matrix4x4.cpp">
       <Filter>Math\Source</Filter>
     </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -72,6 +75,9 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="Components\Component.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Position.h">
       <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
