@@ -1,12 +1,14 @@
 #pragma once
+#include "Components/CID.h"
+#include <map>
 
-class Body;
-class Material;
+class Component;
 
 using UINT = unsigned int;
 class Entity {
 public:
 	UINT ID;
-	Body* Body_cmp;
-	Material* Mat_cmp;
+	Component* operator()(COMID);
+private:
+	std::map<COMID, Component*> COMS;
 };
