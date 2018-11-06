@@ -28,19 +28,25 @@
     <Filter Include="Components">
       <UniqueIdentifier>{d987408b-d8a4-4b94-ae12-7b4c68e13046}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{fb9bb4a9-1210-4e25-bca4-f4cad16ffb84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Math\Vector3.cpp">
-      <Filter>Math\Source</Filter>
     </ClCompile>
     <ClCompile Include="Math\Matrix4x4.cpp">
       <Filter>Math\Source</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\MathFu_Vector3.cpp">
+      <Filter>Math\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\CollidorSys.cpp">
+      <Filter>Systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,16 +74,28 @@
     <ClInclude Include="Math\Matrix4x4.h">
       <Filter>Math\Header</Filter>
     </ClInclude>
-    <ClInclude Include="Components\Collidor.h">
-      <Filter>Components</Filter>
-    </ClInclude>
     <ClInclude Include="Components\CID.h">
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="Components\Component.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="Components\Position.h">
+    <ClInclude Include="Systems\System.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\CollidorCMP.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\CollidorSys.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\PositionCMP.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\MaterialCMP.h">
       <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>

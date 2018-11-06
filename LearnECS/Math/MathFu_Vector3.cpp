@@ -40,14 +40,6 @@ Vector3::Vector3(Vector3&& rhs) {
 	rhs.impl = nullptr;
 }
 
-float& Vector3::X() { return reinterpret_cast<MVec3*>(impl)->x; }
-float& Vector3::Y() { return reinterpret_cast<MVec3*>(impl)->y; }
-float& Vector3::Z() { return reinterpret_cast<MVec3*>(impl)->z; }
-
-float Vector3::X() const { return reinterpret_cast<MVec3*>(impl)->x; }
-float Vector3::Y() const { return reinterpret_cast<MVec3*>(impl)->y; }
-float Vector3::Z() const { return reinterpret_cast<MVec3*>(impl)->z; }
-
 float& Vector3::operator[](const size_t& pos) {
 	assert(pos >= 0 && pos < 3);
 	return (*reinterpret_cast<MVec3*>(impl))[pos];
@@ -58,6 +50,35 @@ float Vector3::operator[](const size_t& pos) const {
 	return (*reinterpret_cast<MVec3*>(impl))[pos];
 }
 
+Vector3 Vector3::operator-(const Vector3& rhs) const {
+	MVec3* lptr = reinterpret_cast<MVec3*>(impl);
+	MVec3* rptr = reinterpret_cast<MVec3*>(rhs.impl);
+	MVec3 res = (*lptr) - (*rptr);
+	return Vector3(new MVec3(res));
+}
+
+Vector3 Vector3::operator+(const Vector3& rhs) const {
+	MVec3* lptr = reinterpret_cast<MVec3*>(impl);
+	MVec3* rptr = reinterpret_cast<MVec3*>(rhs.impl);
+	MVec3 res = (*lptr) +(*rptr);
+	return Vector3(new MVec3(res));
+}
+
+Vector3 Vector3::operator*(const float& rhs) const {
+	MVec3* ptr = reinterpret_cast<MVec3*>(impl);
+	return Vector3(new MVec3((*ptr) * rhs));
+}
+
+Vector3 Vector3::operator/(const float& rhs) const {
+	MVec3* ptr = reinterpret_cast<MVec3*>(impl);
+	return Vector3(new MVec3((*ptr) / rhs));
+}
+
+float Vector3::Length() const {
+	MVec3* ptr = reinterpret_cast<MVec3*>(impl);
+	return ptr->Length();
+}
+
 // static function -----------------------------------------
 
 Vector3 Vector3::Normalize(const Vector3& rhs) {
@@ -65,4 +86,15 @@ Vector3 Vector3::Normalize(const Vector3& rhs) {
 	MVec3* r = new MVec3(*v);
 	r->Normalize();
 	return Vector3(r);
+}
+
+float Vector3::Dot(const Vector3& lhs, const Vector3& rhs) {
+	MVec3* lptr = reinterpret_cast<MVec3*>(lhs.impl);
+	MVec3* rptr = reinterpret_cast<MVec3*>(rhs.impl);
+	return mathfu::DotProductHelper(*lptr, *rptr);
+}
+
+Vector3 operator*(const float& lhs, const Vector3& rhs) {
+	MVec3* ptr = reinterpret_cast<MVec3*>(rhs.impl);
+	return Vector3(new MVec3((*ptr) * lhs));
 }
