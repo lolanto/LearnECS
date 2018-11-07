@@ -122,19 +122,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Environment.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Math\Matrix4x4.cpp" />
     <ClCompile Include="Math\MathFu_Vector3.cpp" />
     <ClCompile Include="Systems\CollidorSys.cpp" />
+    <ClCompile Include="Systems\MaterialSys.cpp" />
+    <ClCompile Include="Universe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BMPPresenter\BMPPresenter.h" />
-    <ClInclude Include="Body.h" />
     <ClInclude Include="Components\CID.h" />
     <ClInclude Include="Components\CollidorCMP.h" />
     <ClInclude Include="Components\Component.h" />
     <ClInclude Include="Components\MaterialCMP.h" />
     <ClInclude Include="Components\PositionCMP.h" />
+    <ClInclude Include="Components\CameraCMP.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Environment.h" />
     <ClInclude Include="Material.h" />
@@ -142,8 +145,11 @@
     <ClInclude Include="Math\Vector3.h" />
     <ClInclude Include="Presenter.h" />
     <ClInclude Include="Ray.h" />
+    <ClInclude Include="Systems\CameraSys.h" />
     <ClInclude Include="Systems\CollidorSys.h" />
+    <ClInclude Include="Systems\MaterialSys.h" />
     <ClInclude Include="Systems\System.h" />
+    <ClInclude Include="Universe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

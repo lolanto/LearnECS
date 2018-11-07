@@ -98,3 +98,12 @@ Vector3 operator*(const float& lhs, const Vector3& rhs) {
 	MVec3* ptr = reinterpret_cast<MVec3*>(rhs.impl);
 	return Vector3(new MVec3((*ptr) * lhs));
 }
+
+Vector3 Vector3::Reflect(const Vector3& vi, const Vector3& n) {
+	MVec3* idt = reinterpret_cast<MVec3*>(vi.impl);
+	MVec3* nor = reinterpret_cast<MVec3*>(n.impl);
+	float c = mathfu::DotProductHelper((*idt), (*nor));
+	MVec3 d = (*nor) * (-2 * c);
+	d = d + (*idt);
+	return Vector3(new MVec3(d));
+}

@@ -1,14 +1,16 @@
 #pragma once
 #include "Ray.h"
-
+#include <float.h>
+class Entity;
 class Environment {
 public:
-	static Environment& GetInstance() {
-		static Environment _ins;
-		return _ins;
-	}
+	Environment(Ray* ptr) : m_ray(ptr) {}
+	Ray* GetRay() { return m_ray; }
+	void InsertRay(Ray);
 public:
-	const Ray* curRay = nullptr;
+	Vector3 HitPos, HitNor;
+	float HitDis = FLT_MAX;
+	Entity* hitEntity = nullptr;
 private:
-	Environment() = default;
+	Ray * m_ray = nullptr;
 };

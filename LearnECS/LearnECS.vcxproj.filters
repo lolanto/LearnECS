@@ -39,21 +39,27 @@
     <ClCompile Include="Math\Matrix4x4.cpp">
       <Filter>Math\Source</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="Math\MathFu_Vector3.cpp">
       <Filter>Math\Source</Filter>
     </ClCompile>
     <ClCompile Include="Systems\CollidorSys.cpp">
       <Filter>Systems</Filter>
     </ClCompile>
+    <ClCompile Include="Systems\MaterialSys.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Universe.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Body.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Material.h">
@@ -97,6 +103,18 @@
     </ClInclude>
     <ClInclude Include="Components\MaterialCMP.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\MaterialSys.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Universe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\CameraCMP.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\CameraSys.h">
+      <Filter>Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
