@@ -57,6 +57,15 @@
     <ClCompile Include="Universe.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Components\CameraCMP.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\CameraSys.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="BMPPresenter\BMPPresenter.cpp">
+      <Filter>Imp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">

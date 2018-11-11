@@ -14,8 +14,10 @@ public:
 public:
 	Universe& InsertRay(Ray);
 	Universe& InsertEntity(Entity*);
+	Universe& InsertCamera(Entity*);
 	Universe& InsertCollidorSystem(System*);
 	Universe& InsertMaterialSystem(System*);
+	void PrepareRay();
 	void SetPresenter(Presenter*);
 	void Run();
 private:
@@ -26,4 +28,5 @@ private:
 	std::vector<System*> m_colSys;
 	std::vector<System*> m_matSys;
 	Presenter* m_pst = nullptr;
+	Entity* m_cam = nullptr;
 };
