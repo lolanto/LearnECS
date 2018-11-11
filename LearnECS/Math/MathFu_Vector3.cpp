@@ -1,4 +1,5 @@
 #include "Vector3.h"
+#include <iostream>
 #include <mathfu/vector.h>
 
 using MVec3 = mathfu::Vector<float, 3>;
@@ -79,6 +80,11 @@ float Vector3::Length() const {
 	return ptr->Length();
 }
 
+void Vector3::Print() const {
+	MVec3* ptr = reinterpret_cast<MVec3*>(impl);
+	std::cout << "x: " << ptr->x << " y: " << ptr->y << " z: " << ptr->z << std::endl;
+}
+
 // static function -----------------------------------------
 
 Vector3 Vector3::Normalize(const Vector3& rhs) {
@@ -106,4 +112,11 @@ Vector3 Vector3::Reflect(const Vector3& vi, const Vector3& n) {
 	MVec3 d = (*nor) * (-2 * c);
 	d = d + (*idt);
 	return Vector3(new MVec3(d));
+}
+
+Vector3 Vector3::Cross(const Vector3& lhs, const Vector3& rhs) {
+	MVec3* lptr = reinterpret_cast<MVec3*>(lhs.impl);
+	MVec3* rptr = reinterpret_cast<MVec3*>(rhs.impl);
+	MVec3 res = mathfu::CrossProductHelper((*lptr), (*rptr));
+	return Vector3(new MVec3(res));
 }

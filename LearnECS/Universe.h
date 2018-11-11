@@ -5,6 +5,7 @@
 class Presenter;
 class Entity;
 class System;
+class PostProcessSys;
 class Universe {
 public:
 	static Universe& GetInstance() {
@@ -14,12 +15,12 @@ public:
 public:
 	Universe& InsertRay(Ray);
 	Universe& InsertEntity(Entity*);
-	Universe& InsertCamera(Entity*);
 	Universe& InsertCollidorSystem(System*);
 	Universe& InsertMaterialSystem(System*);
-	void PrepareRay();
-	void SetPresenter(Presenter*);
+	Universe& InsertPostProcessSystem(PostProcessSys*);
+	void SetCamera(Entity*, System*);
 	void Run();
+	void PostProcess();
 private:
 	Universe() = default;
 private:
@@ -27,6 +28,7 @@ private:
 	std::vector<Entity*> m_es;
 	std::vector<System*> m_colSys;
 	std::vector<System*> m_matSys;
-	Presenter* m_pst = nullptr;
+	std::vector<PostProcessSys*> m_postProSys;
 	Entity* m_cam = nullptr;
+	System* m_camSys = nullptr;
 };

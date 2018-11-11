@@ -7,6 +7,7 @@ public:
 	// vi: incident vector, point to normal
 	// n: normal of the surface
 	static Vector3 Reflect(const Vector3& vi, const Vector3& n);
+	static Vector3 Cross(const Vector3& lhs, const Vector3& rhs);
 public:
 	Vector3(float x = .0f, float y = .0f, float z = .0f);
 	Vector3(void* data);
@@ -25,6 +26,8 @@ public:
 
 	float Length() const;
 
+public:
+	void Print() const;
 private:
 	void* impl = nullptr;
 };

@@ -1,12 +1,14 @@
 #pragma once
 #include "../Math/Vector3.h"
 #include "Component.h"
+#include <memory>
 
 class Film : public Component {
 public:
 	Film(size_t width, size_t height)
 		:Component(CID::C_FILM), Width(width), Height(height) {
 		Buffer = new float[Width * Height * 4]; // r, g, b, other data
+		memset(Buffer, 0, Width * Height * 4 * sizeof(float));
 		iter_begin = FilmIterator(Buffer, 0, Width * Height);
 		iter_end = FilmIterator(Buffer + Width * Height * 4, Width * Height, Width * Height);
 	}
@@ -57,7 +59,8 @@ public:
 		float ux, float uy, float uz)
 		: Component(CID::C_LENS),
 		Focus(f), Aspect(aspect),
-		Orientation(ox, oy, oz), Up(ux, uy, uz) {}
+		Orientation(Vector3::Normalize(Vector3(ox, oy, oz))),
+		Up(Vector3::Normalize(Vector3(ux, uy, uz))) {}
 public:
 	const Vector3 Orientation;
 	const Vector3 Up;

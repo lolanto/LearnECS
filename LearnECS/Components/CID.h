@@ -7,4 +7,6 @@ namespace CID {
 	ID C_LUMINOUS_MAT = 3;
 	ID C_LENS = 4;
 	ID C_FILM = 5;
+	ID C_PLANE_COL = 6;
+	ID C_DIFFUSE_MAT = 7;
 };
